@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// required modules here
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { resolve } = require('path');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create function to retrieve user input
+// inquirer prompt to retrieve user input
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -55,7 +55,19 @@ const promptUser = () => {
       type: 'list',
       name: 'license',
       message: 'Which license does your project use?',
-      choices: ['Apache License 2.0', 'GNU GPLv3', 'ISC', 'MIT', 'Other']
+      choices: ['Apache License 2.0', 'GNU GPLv3', 'ISC', 'MIT', 'Other', 'No license']
+    },
+    {
+      type: 'input',
+      name: 'licenseOther',
+      message: 'What is the the name of your license for this project?',
+      when: ({license}) => {
+        if (license === 'Other') {
+          return true;
+        } else {
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -104,7 +116,7 @@ const promptUser = () => {
   ]);
 };
 
-// TODO: Create a function to write README file
+// function to create README.md in dist directory
 const writeToFile = (fileName, data) => {
   return new Promise((resolve, reject) => {
     fs.writeFile(fileName, data, err => {
@@ -121,7 +133,7 @@ const writeToFile = (fileName, data) => {
   });
 };
 
-// TODO: Create a function to initialize app
+// Function to initialize application
 const init = () => {
   promptUser()
   .then(userResponse => {
@@ -135,5 +147,4 @@ const init = () => {
   });
 };
 
-// Function call to initialize app
 init();

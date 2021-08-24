@@ -1,11 +1,14 @@
+// if instillation section, creates TOC entry for instillation
 const instillationTOC = instillation => {
   if (instillation) {
-    return `* [Installation](#installation)`;
+    return `
+* [Installation](#installation)`;
   } else {
     return '';
   }
 };
 
+// if instillation section, creates the instillation section in the markdown
 const generateInstillation = instillation => {
   if (instillation) {
     return `
@@ -19,19 +22,22 @@ ${instillation}
   }
 };
 
+// if tests section, creates TOC entry for tests
 const testsTOC = tests => {
   if (tests) {
-    return `* [Tests](#tests)`;
+    return `
+* [Tests](#tests)`;
   } else {
     return '';
   }
 };
 
+// if tests section, creates tests section in the markdown
 const generateTests = tests => {
   if (tests) {
     return `
 ## Tests
-    
+
 ${tests}
 `;
 
@@ -60,14 +66,11 @@ const generateMarkdown = data => {
 ${data.description}
 
 ## Table of Contents
-
 ${instillationTOC(data.instillation)}
 * [Usage](#usage)
 * [License](#license)
-* [Contributing](#contributing)
-${testsTOC(data.tests)}
+* [Contributing](#contributing)${testsTOC(data.tests)}
 * [Questions](#questions)
-
 ${generateInstillation(data.instillation)}
 ## Usage
 
