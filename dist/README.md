@@ -1,41 +1,39 @@
 # My Project
 
-![MIT License](https://img.shields.io/badge/license-MIT-green)
+![XYZ License](https://img.shields.io/badge/license-XYZ-green)
     
 ## Description
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
 
 ## Table of Contents
 
-* [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
 
-## Instillation
-
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-
 ## Usage
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-[MIT](https://choosealicense.com/licenses/mit/)   
+praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
 
+## License
+
+XYZ
 
 ## Contributing
 
 Aidan Amato
+Elon Musk
 
 ## Tests
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
 
 ## Questions
 
-If you have any additional questions you can contact me here:
+Please reach out of you have any additional questions!
 
 * [GitHub](https://github.com/aidanamato)
 * [Email](aidanamato@mail.com)

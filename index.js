@@ -72,7 +72,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'contributing',
-      message: 'Who are the contributors of your project?',
+      message: 'Who are the contributors of your project? Separate contributors with a comma.',
       validate: contributingInput => {
         if (contributingInput) {
           return true;

@@ -46,6 +46,15 @@ ${tests}
   }
 };
 
+const licenseTOC = license => {
+  if (license !== 'No license') {
+    return `
+* [License](#license)`;
+  } else {
+    return '';
+  }
+};
+
 // Function to create license badge
 const renderLicenseBadge = (license, licenseOther) => {
   if (license === 'Other') {
@@ -62,30 +71,43 @@ const renderLicenseBadge = (license, licenseOther) => {
 };
 
 // Function to create link to license
-const renderLicenseLink = (license, licenseOther) => {
+const generateLicenseLink = (license, licenseOther) => {
   // If license is other does not create a link but displays the license name entered by user
   if (license === 'Other') {
     return `
-${licenseOther}
-`;
+
+## License
+
+${licenseOther}`;
 
   // If user selects license from list, generate link to that license
   } else if (license === 'Apache License 2.0') {
     return `
-[${license}](https://choosealicense.com/licenses/apache-2.0/)
-`;
+
+## License
+
+[${license}](https://choosealicense.com/licenses/apache-2.0/)`;
+  
   } else if (license === 'GNU GPLv3') {
     return `
-[${license}](https://https://choosealicense.com/licenses/gpl-3.0/)
-`;
+
+## License
+    
+[${license}](https://https://choosealicense.com/licenses/gpl-3.0/)`;
+  
   } else if (license === 'ISC') {
     return `
-[${license}](https://choosealicense.com/licenses/isc/)
-`;
+
+## License
+    
+[${license}](https://choosealicense.com/licenses/isc/)`;
+  
   } else if (license === 'MIT') {
     return `
-[${license}](https://choosealicense.com/licenses/mit/)   
-`;
+
+## License
+    
+[${license}](https://choosealicense.com/licenses/mit/)`;
 
   // if user selects no license return empty string
   } else if (license === 'No license') {
@@ -103,18 +125,18 @@ ${data.description}
 
 ## Table of Contents
 ${instillationTOC(data.instillation)}
-* [Usage](#usage)
-* [License](#license)
+* [Usage](#usage)${licenseTOC(data.license)}
 * [Contributing](#contributing)${testsTOC(data.tests)}
 * [Questions](#questions)
 ${generateInstillation(data.instillation)}
 ## Usage
 
-${data.usage}${renderLicenseLink(data.license, data.licenseOther)}
+${data.usage}${generateLicenseLink(data.license, data.licenseOther)}
 
 ## Contributing
 
-${data.contributing}
+${data.contributing.replace(', ', `
+`)}
 ${generateTests(data.tests)}
 ## Questions
 
