@@ -46,21 +46,57 @@ ${tests}
   }
 };
 
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// Function to create license badge
+const renderLicenseBadge = (license, licenseOther) => {
+  if (license === 'Other') {
+    return `
+![${licenseOther} License](https://img.shields.io/badge/license-${licenseOther}-green)
+    `
+  } else if (license !== 'No license') {
+    return `
+![${license} License](https://img.shields.io/badge/license-${license}-green)
+    `;
+  } else {
+    return '';
+  }
+};
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// Function to create link to license
+const renderLicenseLink = (license, licenseOther) => {
+  // If license is other does not create a link but displays the license name entered by user
+  if (license === 'Other') {
+    return `
+${licenseOther}
+`;
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+  // If user selects license from list, generate link to that license
+  } else if (license === 'Apache License 2.0') {
+    return `
+[${license}](https://choosealicense.com/licenses/apache-2.0/)
+`;
+  } else if (license === 'GNU GPLv3') {
+    return `
+[${license}](https://https://choosealicense.com/licenses/gpl-3.0/)
+`;
+  } else if (license === 'ISC') {
+    return `
+[${license}](https://choosealicense.com/licenses/isc/)
+`;
+  } else if (license === 'MIT') {
+    return `
+[${license}](https://choosealicense.com/licenses/mit/)   
+`;
 
-// TODO: Create a function to generate markdown for README
+  // if user selects no license return empty string
+  } else if (license === 'No license') {
+    return '';
+  }
+};
+
+// Function to generate markdown for README
 const generateMarkdown = data => {
   return `# ${data.title}
-
+${renderLicenseBadge(data.license, data.licenseOther)}
 ## Description
 
 ${data.description}
@@ -74,11 +110,7 @@ ${instillationTOC(data.instillation)}
 ${generateInstillation(data.instillation)}
 ## Usage
 
-${data.usage}
-
-## License
-
-${data.license}
+${data.usage}${renderLicenseLink(data.license, data.licenseOther)}
 
 ## Contributing
 
@@ -86,7 +118,7 @@ ${data.contributing}
 ${generateTests(data.tests)}
 ## Questions
 
-If you have any additional questions you can contact me here:
+Please reach out of you have any additional questions!
 
 * [GitHub](https://github.com/${data.githubUsername})
 * [Email](${data.email})
