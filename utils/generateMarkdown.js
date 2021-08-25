@@ -130,7 +130,7 @@ const generateCredits = credits => {
 
 ## Credits
 
-${credits.replace(', ', `
+${credits.replace(/, /g, `
 `)}`;
   } else {
     return '';
@@ -157,7 +157,7 @@ ${data.usage}${generateLicenseLink(data.license, data.licenseOther)}${generateCr
 
 ## Authors
 
-${data.authors.replace(', ', `
+${data.authors.replace(/, /g, `
 `)}
 ${generateTests(data.tests)}
 ## Questions

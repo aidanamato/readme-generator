@@ -30,7 +30,8 @@ Simply enter the command `node index` after in the directory which this reposito
 ## Credits
 
 UCF Coding Bootcamp - [Starter Code](https://github.com/coding-boot-camp/potential-enigma)
-[Node.js](https://nodejs.org/en/), [NPM Inquirer](https://www.npmjs.com/package/inquirer#prompt)
+[Node.js](https://nodejs.org/en/)
+[NPM Inquirer](https://www.npmjs.com/package/inquirer#prompt)
 
 ## Authors
 
