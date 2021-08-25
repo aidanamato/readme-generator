@@ -60,11 +60,11 @@ const renderLicenseBadge = (license, licenseOther) => {
   if (license === 'Other') {
     return `
 ![${licenseOther} License](https://img.shields.io/badge/license-${licenseOther}-green)
-    `
+`
   } else if (license !== 'No license') {
     return `
 ![${license} License](https://img.shields.io/badge/license-${license}-green)
-    `;
+`;
   } else {
     return '';
   }
@@ -92,21 +92,21 @@ ${licenseOther}`;
     return `
 
 ## License
-    
+
 [${license}](https://https://choosealicense.com/licenses/gpl-3.0/)`;
   
   } else if (license === 'ISC') {
     return `
 
 ## License
-    
+
 [${license}](https://choosealicense.com/licenses/isc/)`;
   
   } else if (license === 'MIT') {
     return `
 
 ## License
-    
+
 [${license}](https://choosealicense.com/licenses/mit/)`;
 
   // if user selects no license return empty string
