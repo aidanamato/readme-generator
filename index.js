@@ -1,7 +1,6 @@
 // required modules here
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { resolve } = require('path');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // inquirer prompt to retrieve user input
@@ -133,18 +132,15 @@ const writeToFile = (fileName, data) => {
   });
 };
 
-// Function to initialize application
-const init = () => {
-  promptUser()
-  .then(userResponse => {
-    return generateMarkdown(userResponse);
-  })
-  .then(readmeMarkdown => {
-    writeToFile('./dist/README.md', readmeMarkdown);
-  })
-  .catch(err => {
-    console.log(err)
-  });
-};
+// call promptUser to begin running application
+promptUser()
+.then(userResponse => {
+  return generateMarkdown(userResponse);
+})
+.then(readmeMarkdown => {
+  writeToFile('./dist/README.md', readmeMarkdown);
+})
+.catch(err => {
+  console.log(err)
+});
 
-init();
