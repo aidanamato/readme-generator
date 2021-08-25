@@ -115,6 +115,28 @@ ${licenseOther}`;
   }
 };
 
+const creditsTOC = credits => {
+  if (credits) {
+    return `
+* [Credits](#credits)`;
+  } else {
+    return '';
+  }
+};
+
+const generateCredits = credits => {
+  if (credits) {
+    return `
+
+## Credits
+
+${credits.replace(', ', `
+`)}`;
+  } else {
+    return '';
+  }
+};
+
 // Function to generate markdown for README
 const generateMarkdown = data => {
   return `# ${data.title}
@@ -125,17 +147,17 @@ ${data.description}
 
 ## Table of Contents
 ${instillationTOC(data.instillation)}
-* [Usage](#usage)${licenseTOC(data.license)}
-* [Contributing](#contributing)${testsTOC(data.tests)}
+* [Usage](#usage)${licenseTOC(data.license)}${creditsTOC(data.credits)}
+* [Authors](#authors)${testsTOC(data.tests)}
 * [Questions](#questions)
 ${generateInstillation(data.instillation)}
 ## Usage
 
-${data.usage}${generateLicenseLink(data.license, data.licenseOther)}
+${data.usage}${generateLicenseLink(data.license, data.licenseOther)}${generateCredits(data.credits)}
 
-## Contributing
+## Authors
 
-${data.contributing.replace(', ', `
+${data.authors.replace(', ', `
 `)}
 ${generateTests(data.tests)}
 ## Questions

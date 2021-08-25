@@ -70,13 +70,18 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'contributing',
-      message: 'Who are the contributors of your project? Separate contributors with a comma.',
+      name: 'credits',
+      message: 'What sources would you like to credit? Separate sources with a comma. (Optional)'
+    },
+    {
+      type: 'input',
+      name: 'authors',
+      message: 'Who are the authors of your project? Separate authors with a comma.',
       validate: contributingInput => {
         if (contributingInput) {
           return true;
         } else {
-          console.log("Please enter the contributors of your project!");
+          console.log("Please enter the authors of your project! Separate authors with a comma.");
           return false;
         }
       }
