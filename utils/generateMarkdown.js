@@ -58,12 +58,14 @@ const licenseTOC = license => {
 // Function to create license badge
 const renderLicenseBadge = (license, licenseOther) => {
   if (license === 'Other') {
+    const licenseStr = licenseOther.replace(/ /g, '_');
     return `
-![${licenseOther} License](https://img.shields.io/badge/license-${licenseOther}-green)
+![${licenseOther} License](https://img.shields.io/badge/license-${licenseStr}-green)
 `
   } else if (license !== 'No license') {
+    const licenseStr = license.replace(/ /g, '_');
     return `
-![${license} License](https://img.shields.io/badge/license-${license}-green)
+![${license} License](https://img.shields.io/badge/license-${licenseStr}-green)
 `;
   } else {
     return '';
