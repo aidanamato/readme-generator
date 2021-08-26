@@ -42,4 +42,4 @@ Aidan Amato
 Please reach out of you have any additional questions!
 
 * [GitHub](https://github.com/aidanamato)
-* [Email](aidanamato@comcast.net)
+* [Email](mailto:aidanamato@comcast.net)

@@ -165,7 +165,7 @@ ${generateTests(data.tests)}
 Please reach out of you have any additional questions!
 
 * [GitHub](https://github.com/${data.githubUsername})
-* [Email](${data.email})
+* [Email](mailto:${data.email})
 `
 };
 
