@@ -23,8 +23,7 @@ This application requires node.js. If you do not have node.js installed, you can
 
 Simply enter the command `node index` after in the directory which this repository was cloned and answer the following command line prompts to generate your README file!
 
-Walkthrough Video:
-<iframe src="https://drive.google.com/file/d/1Vb9tK0TmJ4cGCs5WTfmf-qxKJq5AXCni/preview" width="640" height="480"></iframe>
+[Walkthrough Video](https://drive.google.com/file/d/1Vb9tK0TmJ4cGCs5WTfmf-qxKJq5AXCni/view)
 
 ## License
 
